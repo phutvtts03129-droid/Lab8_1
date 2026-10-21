@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng - Green Mart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Bricolage+Grotesque:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <a class="logo" href="index.html">🥬 Green Mart</a>
+        <nav><a href="index.html">Trang chủ</a><a href="danhmuc.html">Danh mục</a><a href="giohang.html"
+                aria-current="page">Giỏ hàng (<span id="count">0</span>)</a><a href="dathang.html">Đơn hàng</a></nav>
+    </header>
+    <section class="page-banner"
+        style="--bg-img:url(https://images.unsplash.com/photo-1546094096-0df4bcaaa337?w=1600&q=80&auto=format&fit=crop)">
+        <div>
+            <h1>🛒 Giỏ hàng của bạn</h1>
+            <p>Kiểm tra sản phẩm và số lượng trước khi đặt hàng.</p>
+        </div>
+    </section>
+
+
+    
+    <main class="container">
+        <div class="cart-layout">
+            <div class="cart-box" id="giohang"></div>
+            <aside class="summary">
+                <h3>Tóm tắt đơn hàng</h3>
+                <p>Tổng tiền: <span id="tongtien">0đ</span></p>
+                <button onclick="datHang()" class="tieptuc">Đặt hàng</button>
+                <ul>
+                    <li>✔ Miễn phí giao hàng cho đơn từ 200.000đ</li>
+                    <li>✔ Thanh toán khi nhận hàng</li>
+                    <li>✔ Đổi trả trong ngày nếu hàng héo, dập</li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+
+
+
+
+    <div class="band" id="giaohang">
+        <section class="container">
+            <h2>Giao hàng và thanh toán</h2>
+            <p class="sub">Những điều cần biết trước khi bấm đặt hàng.</p>
+            <div class="grid g3">
+                <article class="info"><img
+                        src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=80&auto=format&fit=crop"
+                        alt="Rau củ đóng gói" loading="lazy">
+                    <div>
+                        <h3>Giao trong 2 giờ</h3>
+                        <p>Đơn đặt trước 18:00 được giao trong ngày tại nội thành TP.HCM. Khung giờ ngoài đó sẽ giao vào
+                            sáng hôm sau.</p>
+                    </div>
+                </article>
+                <article class="info"><img
+                        src="https://images.unsplash.com/photo-1518843875459-f738682238a6?w=600&q=80&auto=format&fit=crop"
+                        alt="Ớt chuông tươi" loading="lazy">
+                    <div>
+                        <h3>Thanh toán linh hoạt</h3>
+                        <p>Trả tiền mặt khi nhận hàng. Kiểm tra hàng cùng nhân viên giao rồi mới thanh toán.</p>
+                    </div>
+                </article>
+                <article class="info"><img
+                        src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=600&q=80&auto=format&fit=crop"
+                        alt="Táo tươi" loading="lazy">
+                    <div>
+                        <h3>Đổi trả dễ dàng</h3>
+                        <p>Báo cho chúng tôi trong ngày nhận hàng nếu có món héo, dập. Chúng tôi đổi món mới hoặc hoàn
+                            tiền.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+    <section class="container">
+        <h2>Thêm vào giỏ cho đủ bữa</h2>
+        <p class="sub">Những món khách thường mua kèm trong cùng một đơn.</p>
+        <div class="product-list" id="chay"></div>
+    </section>
+    <footer>
+        <div class="foot">
+            <div>
+                <h3>🥬 Green Mart</h3>
+                <p>Rau củ quả sạch, chọn tay mỗi sáng và giao tới bếp nhà bạn trong ngày.</p>
+                <p>Giờ làm việc: 6:00 – 21:00, mỗi ngày.</p>
+            </div>
+            <div>
+                <h3>Mua sắm</h3><a href="danhmuc.html">Tất cả sản phẩm</a><a href="danhmuc.html#banchay">Bán chạy</a><a
+                    href="danhmuc.html#sanPhamMoi">Hàng mới</a><a href="giohang.html">Giỏ hàng</a>
+            </div>
+            <div>
+                <h3>Hỗ trợ</h3><a href="dathang.html">Theo dõi đơn hàng</a><a href="dathang.html#hoidap">Câu hỏi thường
+                    gặp</a><a href="giohang.html#giaohang">Giao hàng &amp; thanh toán</a>
+            </div>
+            <div>
+                <h3>Liên hệ</h3>
+                <p>Hotline: 1900 6868</p>
+                <p>Email: xinchao@greenmart.vn</p>
+                <p>123 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh</p>
+            </div>
+        </div>
+        <div class="copy">© 2026 Green Mart. Thực phẩm sạch cho mọi nhà.</div>
+    </footer>
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đơn hàng của bạn - Green Mart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Bricolage+Grotesque:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <a class="logo" href="index.html">🥬 Green Mart</a>
+        <nav><a href="index.html">Trang chủ</a><a href="danhmuc.html">Danh mục</a><a href="giohang.html">Giỏ hàng (<span
+                    id="count">0</span>)</a><a href="dathang.html" aria-current="page">Đơn hàng</a></nav>
+    </header>
+    <section class="page-banner"
+        style="--bg-img:url(https://images.unsplash.com/photo-1547514701-42782101795e?w=1600&q=80&auto=format&fit=crop)">
+        <div>
+            <h1>Đơn hàng của bạn</h1>
+            <p>Theo dõi những đơn hàng bạn đã đặt tại Green Mart.</p>
+        </div>
+    </section>
+    <main class="container">
+        <div id="lichSuDonHang"></div>
+    </main>
+    <div class="band">
+        <section class="container">
+            <h2>Đơn hàng đi qua những bước nào?</h2>
+            <p class="sub">Bốn trạng thái bạn sẽ thấy trên mỗi đơn.</p>
+            <div class="stat-flow">
+                <div><b>Chờ xác nhận</b><span>Chúng tôi vừa nhận đơn và kiểm tra tồn kho.</span></div>
+                <div><b>Đang chuẩn bị</b><span>Nhân viên chọn hàng, cân và đóng gói.</span></div>
+                <div><b>Đang giao</b><span>Shipper mang hàng tới địa chỉ của bạn.</span></div>
+                <div><b>Đã nhận hàng</b><span>Bạn kiểm tra hàng và thanh toán.</span></div>
+            </div>
+        </section>
+    </div>
+    <section class="container" id="hoidap">
+        <div class="split" style="grid-template-columns:1.3fr .7fr;align-items:start">
+            <div>
+                <h2>Câu hỏi thường gặp</h2>
+                <p class="sub">Câu trả lời nhanh cho các thắc mắc phổ biến về đơn hàng.</p>
+                <details>
+                    <summary>Tôi có thể hủy đơn không?</summary>
+                    <p>Bạn có thể hủy khi đơn còn ở trạng thái Chờ xác nhận. Gọi hotline 1900 6868 để được hỗ trợ nhanh
+                        nhất.</p>
+                </details>
+                <details>
+                    <summary>Bao lâu thì tôi nhận được hàng?</summary>
+                    <p>Nội thành TP.HCM giao trong khoảng 2 giờ kể từ khi đơn được xác nhận.</p>
+                </details>
+                <details>
+                    <summary>Nếu hàng bị héo hoặc dập thì sao?</summary>
+                    <p>Chụp ảnh gửi cho chúng tôi trong ngày nhận hàng. Chúng tôi sẽ đổi món mới hoặc hoàn tiền.</p>
+                </details>
+                <details>
+                    <summary>Phí giao hàng được tính thế nào?</summary>
+                    <p>Miễn phí cho đơn từ 200.000đ. Đơn nhỏ hơn có phụ phí theo khu vực, hiển thị trước khi giao.</p>
+                </details>
+            </div>
+            <div class="contact">
+                <h3>Cần hỗ trợ gấp?</h3>
+                <p>Gọi cho chúng tôi từ 6:00 đến 21:00 mỗi ngày.</p><b>1900 6868</b>
+                <p>Hoặc gửi email tới xinchao@greenmart.vn</p>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <h2>Mua lại món bạn thích</h2>
+        <p class="sub">Đặt thêm những món được khách mua nhiều nhất.</p>
+        <div class="product-list" id="chay"></div>
+    </section>
+    <footer>
+        <div class="foot">
+            <div>
+                <h3>🥬 Green Mart</h3>
+                <p>Rau củ quả sạch, chọn tay mỗi sáng và giao tới bếp nhà bạn trong ngày.</p>
+                <p>Giờ làm việc: 6:00 – 21:00, mỗi ngày.</p>
+            </div>
+            <div>
+                <h3>Mua sắm</h3><a href="danhmuc.html">Tất cả sản phẩm</a><a href="danhmuc.html#banchay">Bán chạy</a><a
+                    href="danhmuc.html#sanPhamMoi">Hàng mới</a><a href="giohang.html">Giỏ hàng</a>
+            </div>
+            <div>
+                <h3>Hỗ trợ</h3><a href="dathang.html">Theo dõi đơn hàng</a><a href="dathang.html#hoidap">Câu hỏi thường
+                    gặp</a><a href="giohang.html#giaohang">Giao hàng &amp; thanh toán</a>
+            </div>
+            <div>
+                <h3>Liên hệ</h3>
+                <p>Hotline: 1900 6868</p>
+                <p>Email: xinchao@greenmart.vn</p>
+                <p>123 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh</p>
+            </div>
+        </div>
+        <div class="copy">© 2026 Green Mart. Thực phẩm sạch cho mọi nhà.</div>
+    </footer>
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

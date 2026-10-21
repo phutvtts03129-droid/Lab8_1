@@ -1,0 +1,98 @@
+
+.auth-container,
+.auth-container input,
+.auth-container button,
+.auth-container h1,
+.auth-container h2,
+.auth-container p,
+.auth-container a {
+    font-family: "Plus Jakarta Sans", Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Khung form */
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Tiêu đề */
+.auth-card h1 {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+/* Mô tả */
+.auth-subtitle {
+    text-align: center;
+    color: #666666;
+    line-height: 1.6;
+}
+
+/* Ô nhập liệu */
+.auth-card input {
+    display: block;
+    width: 100%;
+    padding: 13px 15px;
+    margin: 15px 0;
+    border: 1px solid #dddddd;
+    border-radius: 9px;
+    font-size: 15px;
+    outline: none;
+}
+
+.auth-card input:focus {
+    border-color: #2e7d32;
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.12);
+}
+
+/* Nút */
+.auth-card button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 9px;
+    background: #2e7d32;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.auth-card button:hover {
+    background: #256628;
+}
+
+
+#thongBao {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.auth-card a {
+    color: #2e7d32;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-card a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .auth-card {
+        margin: 20px auto;
+        padding: 22px;
+    }
+
+    .auth-card h1 {
+        font-size: 23px;
+    }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký - Green Mart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+<header>
+    <a class="logo" href="index.html">🥬 Green Mart</a>
+    <nav>
+        <a href="index.html">Trang chủ</a>
+        <a href="danhmuc.html">Danh mục</a>
+        <a href="giohang.html">Giỏ hàng</a>
+        <a href="dangnhap.html">Đăng nhập</a>
+    </nav>
+</header>
+
+<main class="auth-container">
+    <div class="auth-card">
+        <div class="auth-icon">🌱</div>
+
+        <h1>Tạo tài khoản</h1>
+        <p class="auth-subtitle">Tham gia Green Mart để mua sắm dễ dàng hơn.</p>
+
+        <form id="formDangKy">
+    <h2>Đăng ký Green Mart</h2>
+
+    <input
+        type="text"
+        id="hoTen"
+        placeholder="Họ và tên"
+        required
+    >
+
+    <input
+        type="text"
+        id="tenDangNhap"
+        placeholder="Tên đăng nhập"
+        minlength="4"
+        required
+    >
+
+    <input
+        type="password"
+        id="matKhau"
+        placeholder="Mật khẩu"
+        minlength="6"
+        required
+    >
+
+    <input
+        type="password"
+        id="xacNhan"
+        placeholder="Xác nhận mật khẩu"
+        required
+    >
+
+    <p id="thongBao"></p>
+
+    <button type="submit">Đăng ký</button>
+
+    <p>Đã có tài khoản?
+        <a href="dangnhap.html">Đăng nhập</a>
+    </p>
+</form>
+
+<script type="module" src="js/auth.js"></script>
+</body>
+</html>

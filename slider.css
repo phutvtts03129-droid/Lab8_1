@@ -1,0 +1,759 @@
+/* =====================================================
+   GREEN MART - HERO SLIDER TRANG CHU
+   Chi ap dung cho #heroSlider va #iconStrip
+   ===================================================== */
+
+/* ===== BANNER CHINH ===== */
+
+#heroSlider.hs {
+    position: relative;
+    isolation: isolate;
+    min-height: 486px;
+    overflow: hidden;
+    color: #fff;
+    background: #0e301b;
+}
+
+#heroSlider .hs-track {
+    display: grid;
+    position: relative;
+    min-height: 486px;
+    isolation: isolate;
+}
+
+
+#heroSlider .hs-slide {
+    position: relative;
+    grid-area: 1 / 1;
+
+    min-width: 0;
+    min-height: 486px;
+    padding: 68px 6% 94px;
+    overflow: hidden;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    /* Không dùng display:none */
+    transition:
+        opacity 2s ease-in-out,
+        visibility 0s linear 2s;
+}
+
+/* ===== FIX CHUYEN SLIDE KHONG GIAT ===== */
+
+#heroSlider .hs-slide.active {
+    z-index: 2;
+    visibility: visible;
+    opacity: 1;
+    transition:
+        opacity 2s ease-in-out,
+        visibility 0s;
+}
+
+#heroSlider .hs-slide.leaving {
+    z-index: 1;
+    visibility: visible;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+        opacity 2s ease-in-out,
+        visibility 0s;
+}
+
+/* ===== ANH NEN ===== */
+
+#heroSlider .hs-bg {
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-size: cover;
+    transform: scale(1.02);
+}
+
+#heroSlider .hs-slide.active .hs-bg {
+    animation: hsZoom 8s ease-out forwards;
+}
+
+#heroSlider .hs-slide::before {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    content: "";
+    background: linear-gradient(
+        100deg,
+        rgba(8, 42, 22, .94) 0%,
+        rgba(8, 42, 22, .78) 48%,
+        rgba(8, 42, 22, .32) 100%
+    );
+}
+
+/* ===== NOI DUNG ===== */
+
+#heroSlider .hs-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+    align-items: center;
+    gap: 46px;
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+#heroSlider .hs-copy {
+    min-width: 0;
+}
+
+#heroSlider .hs-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 15px;
+    margin-bottom: 14px;
+    border-radius: 999px;
+    background: #c9e96a;
+    color: #173f27;
+    font-size: .82rem;
+    font-weight: 700;
+}
+
+#heroSlider h1 {
+    max-width: 540px;
+    margin: 0 0 14px;
+    color: #fff;
+    font-family: "Bricolage Grotesque", "Be Vietnam Pro", sans-serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -.035em;
+}
+
+#heroSlider .hs-copy > p {
+    max-width: 500px;
+    margin: 0 0 18px;
+    color: #f0f7e9;
+    font-size: .98rem;
+    line-height: 1.65;
+}
+
+#heroSlider .hs-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 20px;
+    padding: 0;
+    list-style: none;
+}
+
+#heroSlider .hs-tags li {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, .3);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .13);
+    backdrop-filter: blur(5px);
+    font-size: .78rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+#heroSlider .hs-tags li span {
+    font-size: 1rem;
+}
+
+/* ===== NUT BAM ===== */
+
+#heroSlider .hs-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#heroSlider .hs-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 42px;
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: #c9e96a;
+    color: #163d25;
+    font-size: .88rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform .2s ease, background .2s ease;
+}
+
+#heroSlider .hs-btn:hover {
+    transform: translateY(-2px);
+    background: #d8f58b;
+}
+
+#heroSlider .hs-btn.hs-ghost {
+    border-color: rgba(255, 255, 255, .7);
+    background: rgba(0, 0, 0, .15);
+    color: #fff;
+}
+
+#heroSlider .hs-btn.hs-ghost:hover {
+    background: rgba(255, 255, 255, .16);
+}
+
+/* ===== CUM ANH PHU ===== */
+
+#heroSlider .hs-collage {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    grid-template-rows: 142px 142px;
+    gap: 10px;
+    min-width: 0;
+}
+
+#heroSlider .hs-collage img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, .8);
+    border-radius: 15px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .15);
+}
+
+#heroSlider .hs-collage img:first-child {
+    grid-row: span 2;
+    border-radius: 130px 130px 16px 16px;
+}
+
+/* ===== TEM NOI BAT ===== */
+
+#heroSlider .hs-sticker {
+    position: absolute;
+    bottom: 18px;
+    left: -14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    background: #ffbd36;
+    color: #163d25;
+    font-size: .65rem;
+    font-weight: 800;
+    line-height: 1.15;
+    text-align: center;
+    box-shadow: 0 8px 20px #0003;
+    transform: rotate(-8deg);
+}
+
+#heroSlider .hs-sticker b {
+    font-size: 1.65rem;
+    line-height: 1.1;
+}
+
+/* ===== HIEU UNG NOI DUNG ===== */
+
+#heroSlider .anim {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .55s ease, transform .55s ease;
+}
+
+#heroSlider .hs-slide.active .anim {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#heroSlider .hs-slide.active .hs-badge {
+    transition-delay: .05s;
+}
+
+#heroSlider .hs-slide.active h1 {
+    transition-delay: .12s;
+}
+
+#heroSlider .hs-slide.active .hs-copy > p {
+    transition-delay: .19s;
+}
+
+#heroSlider .hs-slide.active .hs-tags {
+    transition-delay: .26s;
+}
+
+#heroSlider .hs-slide.active .hs-actions {
+    transition-delay: .33s;
+}
+
+#heroSlider .hs-slide.active .hs-collage {
+    transition-delay: .19s;
+}
+
+/* ===== ICON TRANG TRI BAY NHE ===== */
+
+#heroSlider .hs-fly {
+    position: absolute;
+    z-index: 3;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+#heroSlider .hs-fly span {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    font-size: var(--s);
+    line-height: 1;
+    opacity: .65;
+    filter: drop-shadow(0 2px 3px #0005);
+    animation: hsBob var(--d) ease-in-out infinite alternate;
+    transform-origin: center;
+}
+
+/* ===== NUT DIEU HUONG ===== */
+
+#heroSlider .hs-arrow {
+    position: absolute;
+    z-index: 5;
+    top: 45%;
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #ffffff99;
+    border-radius: 50%;
+    background: #153c27aa;
+    color: #fff;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: background .2s ease, transform .2s ease;
+}
+
+#heroSlider .hs-arrow:hover {
+    transform: scale(1.06);
+    background: #c9e96a;
+    color: #163d25;
+}
+
+#heroSlider .hs-prev {
+    left: 2%;
+}
+
+#heroSlider .hs-next {
+    right: 2%;
+}
+
+/* ===== THANH TIEN TRINH ===== */
+
+#heroSlider .hs-ctrl {
+    position: absolute;
+    z-index: 5;
+    bottom: 22px;
+    left: max(6%, calc((100% - 1120px) / 2));
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+#heroSlider .hs-dots {
+    display: flex;
+    gap: 6px;
+}
+
+#heroSlider .hs-dot {
+    position: relative;
+    width: 34px;
+    height: 14px;
+    padding: 5px 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+#heroSlider .hs-dot::before {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    left: 0;
+    height: 3px;
+    border-radius: 4px;
+    background: #ffffff65;
+    content: "";
+}
+
+#heroSlider .hs-dot i {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    border-radius: 4px;
+    background: #c9e96a;
+}
+
+#heroSlider .hs-dot.active i {
+    animation: hsRun var(--tg, 5500ms) linear forwards;
+}
+
+#heroSlider.paused .hs-dot.active i {
+    animation-play-state: paused;
+}
+
+#heroSlider .hs-count {
+    color: #f0f7e9;
+    font-size: .8rem;
+    font-weight: 800;
+    letter-spacing: .04em;
+    white-space: nowrap;
+}
+
+#heroSlider .hs-pause {
+    width: 27px;
+    height: 27px;
+    border: 1px solid #ffffff88;
+    border-radius: 50%;
+    background: #ffffff12;
+    color: #fff;
+    cursor: pointer;
+    font-size: .72rem;
+}
+
+#heroSlider .hs-pause:hover {
+    background: #ffffff30;
+}
+
+/* ===== DAI ICON DANH MUC ===== */
+
+#iconStrip.icon-strip {
+    position: relative;
+    z-index: 6;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 4px;
+    width: calc(100% - 48px);
+    max-width: 900px;
+    margin: -46px auto 30px;
+    padding: 8px 14px;
+    border: 1px solid #e5eadf;
+    border-radius: 17px;
+    background: #fff;
+    box-shadow: 0 14px 34px #18391f20;
+}
+
+#iconStrip .is-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+    padding: 6px 4px;
+    border-radius: 13px;
+    text-align: center;
+    text-decoration: none;
+    transition: background .2s ease;
+}
+
+#iconStrip .is-item:hover {
+    background: #f4f9ed;
+}
+
+#iconStrip .is-ico {
+    display: grid;
+    place-items: center;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 5px;
+    border-radius: 50%;
+    background: var(--c);
+    font-size: 1.55rem;
+}
+
+#iconStrip .is-item b {
+    color: #183d27;
+    font-size: .76rem;
+    line-height: 1.25;
+}
+
+#iconStrip .is-item small {
+    margin-top: 3px;
+    color: #657466;
+    font-size: .66rem;
+    line-height: 1.4;
+}
+
+/* ===== KEYFRAMES ===== */
+
+@keyframes hsZoom {
+    from {
+        transform: scale(1.02);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+}
+
+@keyframes hsRun {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes hsBob {
+    from {
+        transform: translate3d(0, -4px, 0) rotate(-4deg);
+    }
+
+    to {
+        transform: translate3d(0, 5px, 0) rotate(4deg);
+    }
+}
+
+/* ===== TABLET ===== */
+
+@media (max-width: 900px) {
+    #heroSlider.hs,
+    #heroSlider .hs-track,
+    #heroSlider .hs-slide {
+        min-height: 500px;
+    }
+
+    #heroSlider .hs-slide {
+        padding: 55px 7% 90px;
+    }
+
+    #heroSlider .hs-inner {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+    }
+
+    #heroSlider .hs-collage {
+        display: none;
+    }
+
+    #heroSlider h1 {
+        max-width: 650px;
+        font-size: clamp(2rem, 5vw, 2.8rem);
+    }
+
+    #heroSlider .hs-ctrl {
+        bottom: 22px;
+        left: 7%;
+    }
+
+    #iconStrip.icon-strip {
+        width: calc(100% - 28px);
+        max-width: 900px;
+        margin-top: -30px;
+        padding: 8px;
+    }
+}
+
+/* ===== DIEN THOAI ===== */
+
+
+@media (max-width: 600px) {
+    #heroSlider.hs,
+    #heroSlider .hs-track,
+    #heroSlider .hs-slide {
+        min-height: 500px;
+    }
+
+    #heroSlider .hs-slide {
+        padding: 40px 22px 100px;
+    }
+
+    #heroSlider .hs-inner {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    #heroSlider h1 {
+        margin-bottom: 14px;
+        font-size: 2rem;
+        line-height: 1.15;
+    }
+
+    #heroSlider .hs-copy > p {
+        font-size: .9rem;
+        line-height: 1.6;
+    }
+
+    #heroSlider .hs-tags {
+        gap: 6px;
+        margin-bottom: 20px;
+    }
+
+    #heroSlider .hs-tags li {
+        padding: 7px 9px;
+        font-size: .7rem;
+        white-space: normal;
+    }
+
+    #heroSlider .hs-actions {
+        gap: 8px;
+    }
+
+    #heroSlider .hs-btn {
+        min-height: 40px;
+        padding: 9px 13px;
+        font-size: .82rem;
+    }
+
+    /* Hiện nút trước và sau trên điện thoại */
+    #heroSlider .hs-arrow {
+        display: grid;
+        position: absolute;
+        top: 50%;
+        z-index: 100;
+        place-items: center;
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        transform: translateY(-50%);
+        pointer-events: auto;
+        cursor: pointer;
+    }
+
+    #heroSlider .hs-prev {
+        left: 8px;
+    }
+
+    #heroSlider .hs-next {
+        right: 8px;
+    }
+
+    #heroSlider .hs-arrow:hover {
+        transform: translateY(-50%) scale(1.06);
+    }
+
+    #heroSlider .hs-arrow:active {
+        transform: translateY(-50%) scale(.95);
+    }
+
+    #heroSlider .hs-ctrl {
+        bottom: 20px;
+        left: 22px;
+        gap: 10px;
+    }
+
+    #heroSlider .hs-dot {
+        width: 25px;
+    }
+
+    #heroSlider .hs-count {
+        font-size: .75rem;
+    }
+
+    #iconStrip.icon-strip {
+        display: flex;
+        justify-content: flex-start;
+        gap: 3px;
+        width: calc(100% - 24px);
+        max-width: none;
+        margin: -24px auto 28px;
+        padding: 8px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #iconStrip .is-item {
+        flex: 0 0 100px;
+        min-width: 100px;
+        padding: 10px 5px;
+        scroll-snap-align: start;
+    }
+
+    #iconStrip .is-ico {
+        flex-basis: 42px;
+        width: 42px;
+        height: 42px;
+        font-size: 1.4rem;
+    }
+
+    #iconStrip .is-item b {
+        font-size: .8rem;
+    }
+
+    #iconStrip .is-item small {
+        font-size: .68rem;
+    }
+}
+
+/* ===== GIẢM CHUYEN DONG ===== */
+
+@media (prefers-reduced-motion: reduce) {
+    #heroSlider .hs-slide,
+    #heroSlider .hs-slide.active .hs-bg,
+    #heroSlider .hs-fly span,
+    #heroSlider .anim {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    #heroSlider .hs-bg {
+        transform: none;
+    }
+
+    #heroSlider .anim {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+#heroSlider .hs-arrow {
+    opacity: 0.8;
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+#heroSlider .hs-arrow:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+#heroSlider .hs-arrow:active {
+    transform: scale(0.95);
+}
+
+#heroSlider .hs-arrow {
+    position: absolute;
+    top: 45%;
+    z-index: 5;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    background: rgba(20, 80, 40, 0.8);
+    cursor: pointer;
+}
+
+#heroSlider .hs-prev {
+    left: 2%;
+}
+
+#heroSlider .hs-next {
+    right: 2%;
+}
+
+#heroSlider .hs-arrow:hover {
+    background: #238636;
+}

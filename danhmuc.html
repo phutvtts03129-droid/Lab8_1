@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh mục sản phẩm - Green Mart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Bricolage+Grotesque:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <a class="logo" href="index.html">🥬 Green Mart</a>
+        <nav><a href="index.html">Trang chủ</a><a href="danhmuc.html" aria-current="page">Danh mục</a><a
+                href="giohang.html">Giỏ hàng (<span id="count">0</span>)</a><a href="dathang.html">Đơn hàng</a></nav>
+    </header>
+    <section class="page-banner"
+        style="--bg-img:url(https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=1600&q=80&auto=format&fit=crop)">
+        <div>
+            <h1>Danh mục rau củ quả</h1>
+            <p>Lựa chọn thực phẩm tươi ngon cho gia đình bạn, lọc theo nhóm hoặc sắp xếp theo giá.</p>
+        </div>
+    </section>
+
+
+
+    
+    <main class="container">
+        <h2>Danh mục sản phẩm</h2>
+        <p class="sub">Bấm vào nhóm để lọc, hoặc dùng ô sắp xếp để tìm món rẻ nhất, bán chạy nhất.</p>
+        <div class="category-list">
+            <a href="#list" onclick="category('tat-ca')">Tất cả</a>
+            <a href="#list" onclick="category('rau')">Rau xanh</a>
+            <a href="#list" onclick="category('cu')">Củ quả</a>
+            <a href="#list" onclick="category('trai-cay')">Trái cây</a>
+            <a href="#list" onclick="category('nam')">Nấm tươi</a>
+        </div>
+        <div class="sort-box"><span>Sắp xếp sản phẩm:</span>
+            <select onchange="renderproducts('list', this.value, 100)">
+                <option value="id">Mặc định</option>
+                <option value="giaTang">Giá thấp đến cao</option>
+                <option value="giaGiam">Giá cao đến thấp</option>
+                <option value="tenAZ">Tên A - Z</option>
+                <option value="sold">Sản phẩm bán chạy</option>
+            </select>
+        </div>
+        <section id="tat-ca">
+            <div class="product-list" id="list"></div>
+        </section>
+
+
+
+
+        <section id="banchay" class="product-section">
+            <h2>🔥 Sản phẩm bán chạy</h2>
+            <p class="sub">Mười hai món được mua nhiều nhất tại Green Mart.</p>
+            <div class="product-list" id="chay"></div>
+        </section>
+        <section id="sanPhamMoi" class="product-section">
+            <h2>🌿 Sản phẩm mới của cả nhà đây</h2>
+            <p class="sub">Hàng mới về trong tuần, số lượng có hạn.</p>
+            <div class="product-list" id="moi"></div>
+        </section>
+    </main>
+    <div class="band">
+        <section class="container">
+            <h2>Mẹo chọn mua theo từng nhóm</h2>
+            <p class="sub">Vài dấu hiệu đơn giản để nhận ra hàng ngon ngay khi cầm trên tay.</p>
+            <div class="grid g4">
+                <article class="info"><img
+                        src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=600&q=80&auto=format&fit=crop"
+                        alt="Rau xanh" loading="lazy">
+                    <div>
+                        <h3>Rau xanh</h3>
+                        <p>Chọn bó có lá xanh đều, cuống giòn, không dập. Rửa dưới vòi nước chảy, để ráo rồi cất ngăn
+                            mát.</p>
+                    </div>
+                </article>
+                <article class="info"><img
+                        src="https://images.unsplash.com/photo-1445282768818-728615cc910a?w=600&q=80&auto=format&fit=crop"
+                        alt="Củ quả" loading="lazy">
+                    <div>
+                        <h3>Củ quả</h3>
+                        <p>Chọn củ chắc tay, vỏ nhẵn, chưa mọc mầm. Để nơi khô thoáng, tránh ánh nắng trực tiếp.</p>
+                    </div>
+                </article>
+                <article class="info"><img
+                        src="https://images.unsplash.com/photo-1553279768-865429fa0078?w=600&q=80&auto=format&fit=crop"
+                        alt="Trái cây" loading="lazy">
+                    <div>
+                        <h3>Trái cây</h3>
+                        <p>Quả nặng tay, thơm ở cuống là nhiều nước. Xoài, chuối để ngoài cho chín, chín rồi thì cất
+                            ngăn mát.</p>
+                    </div>
+                </article>
+                <article class="info"><img
+                        src="https://images.unsplash.com/photo-1504545102780-26774c1bb073?w=600&q=80&auto=format&fit=crop"
+                        alt="Nấm tươi" loading="lazy">
+                    <div>
+                        <h3>Nấm tươi</h3>
+                        <p>Mũ nấm khô ráo, không nhớt. Cất trong túi giấy ở ngăn mát và dùng trong 3 ngày.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="foot">
+            <div>
+                <h3>🥬 Green Mart</h3>
+                <p>Rau củ quả sạch, chọn tay mỗi sáng và giao tới bếp nhà bạn trong ngày.</p>
+                <p>Giờ làm việc: 6:00 – 21:00, mỗi ngày.</p>
+            </div>
+            <div>
+                <h3>Mua sắm</h3><a href="danhmuc.html">Tất cả sản phẩm</a><a href="danhmuc.html#banchay">Bán chạy</a><a
+                    href="danhmuc.html#sanPhamMoi">Hàng mới</a><a href="giohang.html">Giỏ hàng</a>
+            </div>
+            <div>
+                <h3>Hỗ trợ</h3><a href="dathang.html">Theo dõi đơn hàng</a><a href="dathang.html#hoidap">Câu hỏi thường
+                    gặp</a><a href="giohang.html#giaohang">Giao hàng &amp; thanh toán</a>
+            </div>
+            <div>
+                <h3>Liên hệ</h3>
+                <p>Hotline: 1900 6868</p>
+                <p>Email: xinchao@greenmart.vn</p>
+                <p>123 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh</p>
+            </div>
+        </div>
+        <div class="copy">© 2026 Green Mart. Thực phẩm sạch cho mọi nhà.</div>
+    </footer>
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
