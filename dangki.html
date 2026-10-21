@@ -26,48 +26,22 @@
         <h1>Tạo tài khoản</h1>
         <p class="auth-subtitle">Tham gia Green Mart để mua sắm dễ dàng hơn.</p>
 
-        <form id="formDangKy">
-    <h2>Đăng ký Green Mart</h2>
-
-    <input
-        type="text"
-        id="hoTen"
-        placeholder="Họ và tên"
-        required
-    >
-
-    <input
-        type="text"
-        id="tenDangNhap"
-        placeholder="Tên đăng nhập"
-        minlength="4"
-        required
-    >
-
-    <input
-        type="password"
-        id="matKhau"
-        placeholder="Mật khẩu"
-        minlength="6"
-        required
-    >
-
-    <input
-        type="password"
-        id="xacNhan"
-        placeholder="Xác nhận mật khẩu"
-        required
-    >
+      <form id="formDangKy" novalidate>
+    <input type="text" id="hoTen" placeholder="Họ và tên">
+    <input type="text" id="tenDangNhap" placeholder="Tên đăng nhập">
+    <input type="password" id="matKhau" placeholder="Mật khẩu">
+    <input type="password" id="xacNhan" placeholder="Xác nhận mật khẩu">
 
     <p id="thongBao"></p>
 
     <button type="submit">Đăng ký</button>
+</form>
 
     <p>Đã có tài khoản?
         <a href="dangnhap.html">Đăng nhập</a>
     </p>
 </form>
+<script type="module" src="js/dangky.js"></script>
 
-<script type="module" src="js/auth.js"></script>
 </body>
 </html>
